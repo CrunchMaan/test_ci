@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 
 jobs:
   docker:
@@ -29,5 +30,3 @@ jobs:
           tags: |
             ghcr.io/crunchmaan/test_ci:${{ github.ref_name }}
             ghcr.io/crunchmaan/test_ci:latest
-on:
-  workflow_dispatch:
