@@ -39,3 +39,16 @@ mkdir -p /opt/test_ci
 
 echo 'DATABASE_URL=postgresql://app_user:very_strong_assword@db:5432/app_db' > /opt/test_ci/.env
 
+sudo systemctl start docker
+sudo systemctl enable docker
+
+git clone https://github.com/CrunchMaan/test_ci.git /opt/test_ci
+cd /opt/test_ci && docker compose up -d 
+
+
+
+docker build -t ghcr.io/crunchmaan/test_ci:latest .
+
+# локально
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0

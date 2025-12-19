@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   web:
-    image: ghcr.io/CrunchMaan/test_ci:latest
+    image: ghcr.io/crunchmaan/test_ci:latest
     restart: always
     env_file:
       - .env

@@ -29,3 +29,5 @@ jobs:
           tags: |
             ghcr.io/crunchmaan/test_ci:${{ github.ref_name }}
             ghcr.io/crunchmaan/test_ci:latest
+on:
+  workflow_dispatch:
